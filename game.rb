@@ -33,7 +33,7 @@ class Game
 
   def char_guess(guess)
     if @word.include?(guess) == true
-      @user_correct << guess
+      @user_correct << guess if !@user_correct.include?(guess)
       puts "Found #{@word.count(guess)} occurrence(s) of the character #{guess}."
     else
       puts "Sorry no #{guess}'s found."
